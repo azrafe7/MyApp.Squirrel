@@ -23,7 +23,13 @@ namespace MyApp
 
             Assembly assembly = Assembly.GetExecutingAssembly();
 
-			locationTextBox.Text = assembly.Location;
+            Boolean isDebug = false;
+            #if DEBUG
+            isDebug = true;
+            #endif
+            
+            this.Text += isDebug ? " [DEBUG]" : " [RELEASE]";
+            locationTextBox.Text = assembly.Location;
             versionTextBox.Text = assembly.GetName().Version.ToString(4);
 		}
 	}
