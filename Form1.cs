@@ -24,7 +24,7 @@ namespace MyApp
             Assembly assembly = Assembly.GetExecutingAssembly();
 
 			locationTextBox.Text = assembly.Location;
-            versionTextBox.Text = assembly.GetName().Version.ToString(3);
+            versionTextBox.Text = assembly.GetName().Version.ToString(4);
 		}
 	}
 }
